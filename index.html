@@ -1,0 +1,112 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Leaflet Map in Italy</title>
+<!-- Link Leaflet css and javascript -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body bgcolor= '#F5E3CB'>
+<!-- divide map bounding box -->
+<center>
+<br>
+<FONT FACE="DB Manit X" size = "10">
+<strong><font color="#8B4513">🍕 Lieux à visiter à venise, Italy 🍕 <br>Thitima P.</a></FONT></strong>
+
+</FONT><br>
+<div id = "map" style = "width: 1500px ; height: 700px" </div>
+<!-- set center and Link map-->
+<script>
+var map = L.map("map").setView([45.43757473628889, 12.327400829040737],15);
+
+
+
+mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+
+
+
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+attribution: 'Map data &copy; ' + mapLink,
+maxZoom: 19,
+}).addTo(map);
+
+
+
+var greenIcon = L.icon({
+iconUrl: "Italian-delicious-slice-pizza-clipart-PNG.png",
+shadowUrl: "",
+
+
+
+iconSize: [55, 40], // size of the icon
+shadowSize: [50, 64], // size of the shadow
+iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+shadowAnchor: [4, 62], // the same for the shadow
+popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+
+
+var marker = L.marker([45.440734366746376, 12.322215167698797],
+{
+icon: greenIcon,
+draggable: true,
+title: "Venice Canal",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> คลองเวนิส <br> Venice Canal</b>")
+.openPopup();
+
+
+
+var marker = L.marker([45.43822409931661, 12.335897966086812],
+{
+icon: greenIcon,
+draggable: true,
+title: "Amalfi Coast",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b>สะพานรีอัลโต<br>Ponte di Rialto</b>")
+.openPopup();
+
+
+
+var marker = L.marker([45.43400431640107, 12.340346452460041],
+{
+icon: greenIcon,
+draggable: true,
+title: "Palazzo Ducale",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> พระราชวังดอจ <br> Palazzo Ducale </b>")
+.openPopup();
+
+
+
+var marker = L.marker([45.430945715937966, 12.334633821775999],
+{
+icon: greenIcon,
+draggable: true,
+title: "Basilica di Santa Maria della Salute",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> โบสถ์ซานตามาเรีย เดลลา ซาลูเต <br> Basilica di Santa Maria della Salute </b>")
+.openPopup();
+
+
+
+var marker = L.marker([45.43480118271213, 12.339540706436997],
+{
+icon: greenIcon,
+draggable: true,
+title: "Saint Mark's Basilica",
+opacity: 1.5
+}).addTo(map)
+.bindPopup("<b> มหาวิหารซานมาร์โก้ <br> Saint Mark's Basilica </b>")
+.openPopup();
+</script>
+</center>
+</body>
+</html>
